@@ -18,5 +18,4 @@ public class Ex06 {
 		sc.close();
 
 	}
-
 }
