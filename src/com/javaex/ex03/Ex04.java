@@ -5,22 +5,23 @@ import java.util.Scanner;
 public class Ex04 {
 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner (System.in);
+
+		Scanner sc = new Scanner(System.in);
 		System.out.print("근무 시간을 입력하세요: ");
 		int worktime = sc.nextInt();
-		int salary = 10000;
-		
-		if (worktime<=8) {
-			System.out.println("임금은 " + (worktime*salary) + " 입니다");
 
+		if (worktime < 0) {
+			System.out.println("잘못된 값");
+		} else if (worktime <= 8) {
+			int salary = 10000;
+			System.out.println("임금은 " + (worktime * salary) + " 입니다");
 		} else {
-			System.out.println("임금은 " + ((worktime-8)*12000 + 80000) + " 입니다");
+			int salary = 10000;
+			int overtime = (int) (salary * 1.2);
+			System.out.println("임금은 " + ((worktime - 8) * overtime + (salary * 8) + "원 입니다"));
 		}
-		
-		sc.close();
-		
 
+		sc.close();
 	}
 
 }
